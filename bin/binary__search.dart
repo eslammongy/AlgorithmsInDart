@@ -8,5 +8,6 @@ void main(List<String> arguments) {
   var nums = [4, 5, 6, 7, 0, 1, 2];
   // ignore: unused_local_variable
   var arrayOfNames = ['eslam', 'nada', 'samer', 'mongy', 'hamza'];
-  print('The Index Of Your Value Is: ${binarySearch.mySqrt(8)}!');
+  print(
+      'The Index Of Your Value Is: ${binarySearch.pivotedBinarySearch(nums, nums.length - 1, 2)} ');
 }
