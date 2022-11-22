@@ -1,4 +1,5 @@
-class SelectionSerot {
+class SelectionSort {
+  // solution number #1
   int findSmallestValue(List<int> array) {
     var smallestVal = array[0];
     var smallestValIndex = 0;
@@ -12,6 +13,7 @@ class SelectionSerot {
     return smallestVal;
   }
 
+  // solution number #1
   List doSelectionSort(List<int> array) {
     int smallest;
     var sortedArray = [];
@@ -24,5 +26,23 @@ class SelectionSerot {
       array.remove(smallest);
     }
     return sortedArray;
+  }
+
+  // solution number #2
+  List doSelectionSort2(List<int> array) {
+    for (var currentIndex = 0; currentIndex < array.length; currentIndex++) {
+      var smallValueIndex = currentIndex;
+
+      for (var i = currentIndex + 1; i < array.length; i++) {
+        if (array[i] < array[smallValueIndex]) {
+          smallValueIndex = i;
+        }
+      }
+
+      final tempIndex = array[currentIndex];
+      array[currentIndex] = array[smallValueIndex];
+      array[smallValueIndex] = tempIndex;
+    }
+    return array;
   }
 }

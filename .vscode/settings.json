@@ -1,0 +1,22 @@
+{
+    "cSpell.words": [
+        "reves"
+    ],
+    "spellright.language": [
+        "en"
+    ],
+    "spellright.documentTypes": [
+        "markdown",
+        "latex",
+        "plaintext"
+    ],
+    "spellright.parserByClass": {
+        "dart": {
+            "parser": "plain"
+        }
+    },
+    "cSpell.enableFiletypes": [
+        "!dart"
+    ],
+    "cSpell.language": "en,en-GB"
+}

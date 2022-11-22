@@ -7,11 +7,11 @@ import 'package:binary__search/selctionsort.dart';
 
 void main(List<String> arguments) {
   var binarySearch = BinarySearch();
-  var selectionSort = SelectionSerot();
+  var selectionSort = SelectionSort();
   var arrayOfNums = [5, 7, 4, 10, 15, 11, 20, 2];
   var arrayOfNames = ['eslam', 'nada', 'samer', 'mongy', 'hamza'];
 
-  var res = selectionSort.doSelectionSort(arrayOfNums);
+  var res = selectionSort.doSelectionSort2(arrayOfNums);
   print(res);
 }
 
