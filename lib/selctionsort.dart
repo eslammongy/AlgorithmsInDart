@@ -28,20 +28,22 @@ class SelectionSort {
     return sortedArray;
   }
 
-  // solution number #2
-  List doSelectionSort2(List<int> array) {
+  // solution number #2 adding sorting options
+  List doSelectionSort2(List<int> array, String order) {
     for (var currentIndex = 0; currentIndex < array.length; currentIndex++) {
-      var smallValueIndex = currentIndex;
+      var valueIndex = currentIndex;
 
       for (var i = currentIndex + 1; i < array.length; i++) {
-        if (array[i] < array[smallValueIndex]) {
-          smallValueIndex = i;
+        if (array[i] < array[valueIndex] && order == "ASCE") {
+          valueIndex = i;
+        } else if (array[i] > array[valueIndex] && order == "DESC") {
+          valueIndex = i;
         }
       }
 
       final tempIndex = array[currentIndex];
-      array[currentIndex] = array[smallValueIndex];
-      array[smallValueIndex] = tempIndex;
+      array[currentIndex] = array[valueIndex];
+      array[valueIndex] = tempIndex;
     }
     return array;
   }
