@@ -9,9 +9,9 @@ void main(List<String> arguments) {
   var binarySearch = BinarySearch();
   var selectionSort = SelectionSort();
   var arrayOfNums = [5, 7, 4, 10, 15, 11, -20, 2];
-  var arrayOfNames = ['eslam', 'nada', 'samer', 'mongy', 'hamza'];
+  var arrayOfNames = ['Tom', 'Boyaka', 'Matt', 'Luke'];
 
-  var res = selectionSort.doSelectionSort2(arrayOfNums, "ASCE");
+  var res = selectionSort.doSelectionSort3(arrayOfNames, "DESC");
   print(res);
 }
 

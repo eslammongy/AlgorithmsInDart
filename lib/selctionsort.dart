@@ -38,6 +38,31 @@ class SelectionSort {
           valueIndex = i;
         } else if (array[i] > array[valueIndex] && order == "DESC") {
           valueIndex = i;
+        } else {
+          continue;
+        }
+      }
+
+      final tempIndex = array[currentIndex];
+      array[currentIndex] = array[valueIndex];
+      array[valueIndex] = tempIndex;
+    }
+    return array;
+  }
+
+  // solution number #2 adding sorting options
+  List doSelectionSort3(List<String> array, String order) {
+    for (var currentIndex = 0; currentIndex < array.length; currentIndex++) {
+      var valueIndex = currentIndex;
+
+      for (var i = currentIndex + 1; i < array.length; i++) {
+        if (array[i].compareTo(array[valueIndex]) < 0 && order == "ASCE") {
+          valueIndex = i;
+        } else if (array[i].compareTo(array[valueIndex]) > 0 &&
+            order == "DESC") {
+          valueIndex = i;
+        } else {
+          continue;
         }
       }
 
