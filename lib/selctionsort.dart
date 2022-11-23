@@ -51,6 +51,10 @@ class SelectionSort {
   }
 
   // solution number #2 adding sorting options
+  /* 
+  compare to function return negative value if the value at array[i] is smallest than the value at array[valueIndex]
+  if the value at array[i] is bigger than the value at array[valueIndex] will return 1
+   */
   List doSelectionSort3(List<String> array, String order) {
     for (var currentIndex = 0; currentIndex < array.length; currentIndex++) {
       var valueIndex = currentIndex;
