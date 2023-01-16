@@ -1,31 +1,4 @@
-// ignore_for_file: unused_import
-
-import 'package:binary__search/binarysearch.dart';
-import 'package:binary__search/selctionsort.dart';
-import 'package:binary__search/stack.dart';
-
-void main(List<String> arguments) {
-/*   var myList = [8974, 6594, 10290, 2, 221];
-  var res = SelectionSort().findLargerValue(myList);
-  print(res); */
-
-  var stack = Stack();
-  stack.pushItem("Eslam Mongy");
-  stack.pushItem("Samer Mongy");
-  stack.pushItem("Abdelsamea Mongy");
-  print("Get the latest item added to the list ${stack.getTopItem()}");
-  stack.printingStack();
-  var removedItem = stack.popItem();
-  print('***************After pop the top item $removedItem ****************');
-  stack.printingStack();
-  print("Get the latest item added to the list ${stack.getTopItem()}");
-  stack.undoPop(removedItem);
-  print(
-      '***************After Resoring the top item $removedItem ****************');
-  stack.printingStack();
-}
-
-/* List<int> twoSum(List<int> nums, int target) {
+List<int> twoSum(List<int> nums, int target) {
   var result = <int>[];
   outer:
   for (var i = 0; i < nums.length; i++) {
@@ -40,7 +13,7 @@ void main(List<String> arguments) {
     }
   }
   return result;
-} */
+}
 
 List<int> solution(List<int> a) {
   var b = <int>[];
