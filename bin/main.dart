@@ -12,5 +12,8 @@ void main(List<String> arguments) {
   list.appendinList("Mobile");
   list.appendinList("Developer");
 
+  var missNode = list.findNode(1);
+  list.appendAfter(missNode!, "Flutter");
+
   print(list.toString());
 }
