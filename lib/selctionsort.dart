@@ -13,6 +13,17 @@ class SelectionSort {
     return smallestVal;
   }
 
+  int findLargerValue(List<int> array) {
+    var smallestVal = array[0];
+    /* // 7, 5, 4, 10, 15, 11 */
+    for (var i = 1; i < array.length; i++) {
+      if (array[i] > smallestVal) {
+        smallestVal = array[i];
+      }
+    }
+    return smallestVal;
+  }
+
   // solution number #1
   List doSelectionSort(List<int> array) {
     int smallest;
