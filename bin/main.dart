@@ -14,6 +14,8 @@ void main(List<String> arguments) {
 
   var missNode = list.findNode(1);
   list.appendAfter(missNode!, "Flutter");
+  missNode = list.findNode(2);
+  list.removingAfterparticlurNode(missNode!);
 
   print(list.toString());
 }

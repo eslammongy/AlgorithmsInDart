@@ -58,6 +58,45 @@ class LinkedList<E> {
     return node.next;
   }
 
+  /* removing a node from the front of linked list */
+
+  E? popFromFrontOfList() {
+    final value = head?.value;
+    head = head?.next;
+
+    if (isEmpty) {
+      tail = null;
+    }
+    print("The Removed Value -> $value");
+    return value;
+  }
+
+  /* removing a node from the end of linked list */
+  E? removeLastNodeFromList() {
+    if (head?.next == null) return popFromFrontOfList();
+
+    var currentNode = head;
+    while (currentNode?.next != tail!) {
+      currentNode = currentNode?.next;
+    }
+    final value = tail?.value;
+    tail = currentNode;
+    tail?.next = null;
+    print("The Removed Value -> $value");
+    return value;
+  }
+
+  /* removing a node after a particlur node at linked list */
+  E? removingAfterparticlurNode(Node<E> node) {
+    final value = node.next?.value;
+    if (node.next == tail) {
+      tail = node;
+    }
+    node.next = node.next?.next;
+    print("The Removed Value -> $value");
+    return value;
+  }
+
   @override
   String toString() {
     if (isEmpty) return "Empty Linked List";
