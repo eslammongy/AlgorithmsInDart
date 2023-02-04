@@ -1,8 +1,10 @@
 class Stack {
   late int topItem;
-  final List _listOfItems = [];
+  final List<dynamic> _listOfItems = [];
 
-  Stack({this.topItem = -1});
+  Stack() {
+    topItem = -1;
+  }
 
   void pushItem(dynamic element) {
     if (topItem > _listOfItems.length - 1) {
@@ -10,24 +12,18 @@ class Stack {
           "Sorry, we can't adding this new item because the list is fullfill");
     } else {
       topItem++;
-      print(topItem);
+      //print("Push Method-> $topItem");
       _listOfItems.insert(topItem, element);
     }
   }
 
   popItem() {
     dynamic element = 1;
-    if (topItem < 0) {
+    if (stackIsEmpty()) {
       print(
           "Sorry, we can't deleting this element because the list is already empty");
     } else {
       element = _listOfItems[topItem];
-      //print("Fromt Pop fun :: $element");
-      if (topItem == 0) {
-        _listOfItems.removeAt(topItem);
-        return element;
-      }
-      //topItem--;
       _listOfItems.removeAt(topItem);
       topItem--;
     }
@@ -36,11 +32,26 @@ class Stack {
   }
 
   getTopItem() {
-    return _listOfItems[topItem];
+    if (stackIsEmpty()) {
+      print(
+          "Sorry, we can't deleting this element because the list is already empty");
+    } else {
+      final element = _listOfItems[topItem];
+      return element;
+    }
   }
 
-  undoPop(element) {
+  bool stackIsEmpty() {
+    if (topItem == -1) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  undoPop(dynamic element) {
     if (element != null) {
+      topItem++;
       _listOfItems.insert(topItem, element);
     } else {
       print(
@@ -49,6 +60,10 @@ class Stack {
   }
 
   void printingStack() {
+    if (_listOfItems.isEmpty) {
+      print("The Stack Is Empty !");
+      return;
+    }
     for (var i = _listOfItems.length - 1; i >= 0; i--) {
       print("Element:: ${_listOfItems[i]}");
     }
