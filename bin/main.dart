@@ -1,46 +1,26 @@
 // ignore_for_file: unused_import
-
 import 'dart:ffi';
-
 import 'package:binary__search/binarysearch.dart';
 import 'package:binary__search/linked_list.dart';
+import 'package:binary__search/linked_queue.dart';
 import 'package:binary__search/selctionsort.dart';
 import 'package:binary__search/stack.dart';
 import 'package:binary__search/stack_linkedlist.dart';
-import 'package:test/expect.dart';
 
 void main(List<String> arguments) {
-  //implementing linked list
-/*   final list = LinkedList<String>();
-  list.appendinList("Eslam");
-  list.appendinList("Mongy");
-  list.appendinList("Mobile");
-  list.appendinList("Developer");
-  var missNode = list.findNode(1);
-  list.appendAfter(missNode!, "Flutter");
-  missNode = list.findNode(2);
-  list.removingAfterparticlurNode(missNode!);
-  print(list.toString()); */
+  LinkedQueue queue = LinkedQueue();
 
-  //implementing stack
+  queue.enqueue("Eslam");
+  queue.enqueue("Mongy");
+  queue.enqueue("Mobile");
+  queue.enqueue("App");
+  queue.enqueue("Developer");
+  // queue.clearQueue();
+  queue.displayQueueItems();
+  print("Front Item-> ${queue.getQueueFront()}");
+  print("Rear Item-> ${queue.getQueueRear()}");
 
-  final stact = StackWithLinkedList();
-  stact.pushToStack("Eslam");
-  stact.pushToStack("Mongy");
-  stact.pushToStack("Mobile");
-  stact.pushToStack("Developer");
-
-  stact.displayStackItems();
-  print("*****************************");
-  stact.getStackTop();
-  print("*****************************");
-  print("*****************************");
-  stact.popFromStack();
-  stact.getStackTop();
-  stact.undoPop();
-  print("*****************************");
-
-  stact.displayStackItems();
+  queue.getQueueSize();
 }
 
 bool checkPair(String open, String close) {
