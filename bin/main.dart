@@ -1,6 +1,7 @@
 // ignore_for_file: unused_import
 import 'dart:ffi';
 import 'package:binary__search/binarysearch.dart';
+import 'package:binary__search/leet_code.dart';
 import 'package:binary__search/linked_list.dart';
 import 'package:binary__search/linked_queue.dart';
 import 'package:binary__search/selctionsort.dart';
@@ -8,8 +9,7 @@ import 'package:binary__search/stack.dart';
 import 'package:binary__search/stack_linkedlist.dart';
 
 void main(List<String> arguments) {
-  LinkedQueue queue = LinkedQueue();
-
+  /*  LinkedQueue queue = LinkedQueue();
   queue.enqueue("Eslam");
   queue.enqueue("Mongy");
   queue.enqueue("Mobile");
@@ -19,8 +19,10 @@ void main(List<String> arguments) {
   queue.displayQueueItems();
   print("Front Item-> ${queue.getQueueFront()}");
   print("Rear Item-> ${queue.getQueueRear()}");
+  queue.getQueueSize(); */
 
-  queue.getQueueSize();
+  var res = romanToInt("MCMXCIV");
+  print(res);
 }
 
 bool checkPair(String open, String close) {

@@ -76,3 +76,47 @@ bool solution2(List<int> nums) {
 
   return false;
 }
+
+/* 
+I             1
+V             5
+X             10
+L             50
+C             100
+D             500
+M             1000
+
+I can be placed before V (5) and X (10) to make 4 and 9. 
+X can be placed before L (50) and C (100) to make 40 and 90. 
+C can be placed before D (500) and M (1000) to make 400 and 900.
+ */
+
+int romanToInt(String s) {
+  var romanNums = <String, int>{
+    'I': 1,
+    'V': 5,
+    'X': 10,
+    'L': 50,
+    'C': 100,
+    'D': 500,
+    'M': 1000
+  };
+
+  int sum = 0;
+  int prev = 0;
+
+  if (RegExp(r'[IVXLCDM]').allMatches(s).length == s.length) {
+    for (int i = s.length - 1; i >= 0; i--) {
+      int current = romanNums[s[i]]!;
+      if (current >= prev) {
+        sum += current;
+      } else {
+        sum -= current;
+      }
+      prev = current;
+    }
+  } else {
+    print('Invalid input');
+  }
+  return sum;
+}
