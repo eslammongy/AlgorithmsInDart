@@ -97,6 +97,23 @@ class LinkedList<E> {
     return value;
   }
 
+  /* create function to reverse the linked list*/
+  reverseLinkedList(LinkedList linkedList) {
+    Node? prev;
+    Node? current = linkedList.head;
+    Node? nextNode;
+
+    while (current != null) {
+      nextNode = current.next;
+      current.next = prev;
+      prev = current;
+      current = nextNode;
+    }
+    linkedList.head = prev as Node<E>?;
+
+    return linkedList;
+  }
+
   @override
   String toString() {
     if (isEmpty) return "Empty Linked List";

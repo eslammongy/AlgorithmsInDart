@@ -9,20 +9,16 @@ import 'package:binary__search/stack.dart';
 import 'package:binary__search/stack_linkedlist.dart';
 
 void main(List<String> arguments) {
-  /*  LinkedQueue queue = LinkedQueue();
-  queue.enqueue("Eslam");
-  queue.enqueue("Mongy");
-  queue.enqueue("Mobile");
-  queue.enqueue("App");
-  queue.enqueue("Developer");
-  // queue.clearQueue();
-  queue.displayQueueItems();
-  print("Front Item-> ${queue.getQueueFront()}");
-  print("Rear Item-> ${queue.getQueueRear()}");
-  queue.getQueueSize(); */
-
-  var res = romanToInt("MCMXCIV");
-  print(res);
+  LinkedList linkedList = LinkedList();
+  linkedList.appendinList(10);
+  linkedList.appendinList(20);
+  linkedList.appendinList(30);
+  linkedList.appendinList(40);
+  linkedList.appendinList(50);
+  print(linkedList.toString());
+  print("***** Linked List After Reversed .. ****");
+  linkedList.reverseLinkedList;
+  print(linkedList.reverseLinkedList(linkedList));
 }
 
 bool checkPair(String open, String close) {

@@ -120,3 +120,47 @@ int romanToInt(String s) {
   }
   return sum;
 }
+
+class ListNode {
+  int val;
+  ListNode? next;
+  ListNode([this.val = 0, this.next]);
+}
+
+/* 
+Input: l1 = [2,4,3], 
+       l2 = [5,6,4]
+Output: [7,0,8]
+Explanation: 342 + 465 = 807. 
+*/
+ListNode? addTwoNumbers(ListNode? l1, ListNode? l2) {
+  ListNode result = ListNode(0);
+  ListNode ptr = result;
+
+  int carry = 0; // Set default carry
+
+  while (l1 != null || l2 != null) {
+    int sum = 0 + carry; // Initialize sum
+
+    if (l1 != null) {
+      // Use number from first list
+      sum += l1.val;
+      l1 = l1.next;
+    }
+
+    if (l2 != null) {
+      // Use number from 2nd list
+      sum += l2.val;
+      l2 = l2.next;
+    }
+
+    carry = sum ~/ 10; // Get sum and carry
+    sum = sum % 10;
+    ptr.next = ListNode(sum);
+    ptr = ptr.next!;
+  }
+
+  if (carry == 1) ptr.next = ListNode(1);
+
+  return result.next;
+}
