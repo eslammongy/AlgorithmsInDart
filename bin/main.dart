@@ -1,6 +1,7 @@
 // ignore_for_file: unused_import
 import 'dart:ffi';
 import 'package:binary__search/binarysearch.dart';
+import 'package:binary__search/boubly_linkedlist.dart';
 import 'package:binary__search/leet_code.dart';
 import 'package:binary__search/linked_list.dart';
 import 'package:binary__search/linked_queue.dart';
@@ -9,16 +10,14 @@ import 'package:binary__search/stack.dart';
 import 'package:binary__search/stack_linkedlist.dart';
 
 void main(List<String> arguments) {
-  LinkedList linkedList = LinkedList();
-  linkedList.appendinList(10);
-  linkedList.appendinList(20);
-  linkedList.appendinList(30);
-  linkedList.appendinList(40);
-  linkedList.appendinList(50);
-  print(linkedList.toString());
-  print("***** Linked List After Reversed .. ****");
-  linkedList.reverseLinkedList;
-  print(linkedList.reverseLinkedList(linkedList));
+  DoublyLinkedList doublyLinkedList = DoublyLinkedList();
+
+  doublyLinkedList.insertingAtFirst("eslam");
+  doublyLinkedList.insertingAtFirst("mongy");
+  doublyLinkedList.insertingAtFirst("flutter");
+  doublyLinkedList.insertingAtFirst("developer");
+
+  doublyLinkedList.insertAt(2, "Mobile");
 }
 
 bool checkPair(String open, String close) {
