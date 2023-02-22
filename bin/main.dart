@@ -12,12 +12,13 @@ import 'package:binary__search/stack_linkedlist.dart';
 void main(List<String> arguments) {
   DoublyLinkedList doublyLinkedList = DoublyLinkedList();
 
-  doublyLinkedList.insertingAtFirst("eslam");
-  doublyLinkedList.insertingAtFirst("mongy");
-  doublyLinkedList.insertingAtFirst("flutter");
-  doublyLinkedList.insertingAtFirst("developer");
+  doublyLinkedList.insertAtLast("eslam");
+  doublyLinkedList.insertAtLast("mongy");
+  doublyLinkedList.insertAtLast("flutter");
+  doublyLinkedList.insertAtLast("developer");
 
-  doublyLinkedList.insertAt(2, "Mobile");
+  doublyLinkedList.removeAt(1);
+  doublyLinkedList.displayListItems();
 }
 
 bool checkPair(String open, String close) {

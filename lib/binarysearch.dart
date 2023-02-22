@@ -99,6 +99,22 @@ class BinarySearch {
     }
   }
 
+  int pivotIndex(List<int> nums) {
+    int sum = nums.fold(0, (previous, current) => previous + current);
+    double sumTillTheIndex = 0;
+    int result = 0;
+
+    for (int i = 0; i < nums.length; i++) {
+      if (sumTillTheIndex == sum - nums[i] - sumTillTheIndex) {
+        return i;
+      } else {
+        sumTillTheIndex += nums[i];
+      }
+    }
+
+    return -1;
+  }
+
   int findPivot(arr, low, high) {
     // base cases
     if (high < low) return -1;
